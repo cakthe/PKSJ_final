@@ -1,0 +1,115 @@
+# Tugas Final PKSJ | DVWA
+
+Pada tugas pertama final ini kami mencoba DVWA, Cuckoo, dan Snort.
+
+pertama-tama kami akan menjelaskan tentang DVWA
+untuk mencoba DVWA, pertama-tama kami harus memiliki :
+  - VM
+  - Backtrack
+  - Metasploitable
+  
+sedangkan sistem yang diserang adalah sebuah server ubuntu.
+
+## Daftar isi
+1. [Pendahuluan](#pendahuluan)
+2. [Dasar Teori](#dasar-teori)
+  
+## 1. Pendahuluan
+apa itu penetration testing?
+penetration testing adalah simulasi serangan yang dilakukan terhadap suatu jaringan. 
+hal ini dilakukan untuk menemukan kelemahan yang ada di dalam sebuah sistem.
+
+## 2. Dasar Teori
+### 2.1. Penetration Testing
+
+A penetration test, or pen-test, is an attempt to evaluate the security of an IT infrastructure by safely trying to exploit vulnerabilities. These vulnerabilities may exist in operating systems, services and application flaws, improper configurations or risky end-user behavior. Such assessments are also useful in validating the efficacy of defensive mechanisms, as well as, end-user adherence to security policies. 
+
+Penetration tests are typically performed using manual or automated technologies to systematically compromise servers, endpoints, web applications, wireless networks, network devices, mobile devices and other potential points of exposure. Once vulnerabilities have been successfully exploited on a particular system, testers may attempt to use the compromised system to launch subsequent exploits at other internal resources – specifically by trying to incrementally achieve higher levels of security clearance and deeper access to electronic assets and information via privilege escalation.
+
+(source : https://www.coresecurity.com/content/penetration-testing)
+### 2.2. Brute Force
+
+Brute force attack adalah salah satu metode peretasan password. bruteforce akan mencoba semua kemungkinan kombinasi yang ada pada suatu file. pada tugas kali ini, kami membuat dua file untuk percobaan metode bruteforce :
+1. file pass.txt berisi wordlist yang terisi password asli (dictionary)
+2. file npass.txt berisi wordlist yang tidak terisi password asli (nodirectionary)
+
+### 2.3. THC-Hydra
+
+Hydra merupakan *tool* pembobol login yang menyediakan berbagai macam protokol untuk serangan. Modul-modul baru mudah untuk ditambahkan, selain itu *tool* ini juga fleksibel dan sangat cepat performanya.
+
+Hydra telah diuji *compile* pada sistem operasi Linux, Windows/Cygwin, Solaris 11, FreeBSD 8.1, OpenBSD, OSX, QNX/Blackberry, dan tersedia di bawah GPLv3 dengan pengembangan lisensi OpenSSL khusus.
+
+Currently this tool supports:
+Saat ini Hydra menyediakan protokol:
+
+    Asterisk, AFP, Cisco AAA, Cisco auth, Cisco enable, CVS, Firebird, FTP, HTTP-FORM-GET, HTTP-FORM-POST, HTTP-GET, HTTP-HEAD, HTTP-POST, HTTP-PROXY, HTTPS-FORM-GET, HTTPS-FORM-POST, HTTPS-GET, HTTPS-POST, HTTPS-HEAD, HTTP-Proxy, ICQ, IMAP, IRC, LDAP, MS-SQL, MYSQL, NCP, NNTP, Oracle Listener, Oracle SID, Oracle, PC-Anywhere, PCNFS, POP3, POSTGRES, RDP, Rexec, Rlogin, Rsh, RTSP, S7-300, SAP/R3, SIP, SMB, SMTP, SMTP Enum, SNMP, SOCKS5, SSH (v1 dan v2), Subversion, Teamspeak (TS2), Telnet, VMware-Auth, VNC dan XMPP.
+
+Untuk HTTP, POP3, IMAP dan SMTP, beberapa mekanisme login seperti *plain digest* dan *MD5 digest* juga sudah tersedia.
+
+*Tool* ini merupakan pembuktian konsep, untuk memberikan para peneliti dan konsultan keamanan jaringan sebuah peluang untuk menunjukkan betapa mudahnya mendapatkan akses jarak jauh ke dalam sistem.
+
+Program Hydra telah ditulis oleh van Hauser dan kini didukung oleh David Maciejak.        
+
+(Sumber*: https://www.thc.org/thc-hydra/)
+
+\* : Teridentifikasi oleh google chrome sebagai Dangerous
+
+### 2.4. Ncrack
+
+Ncrack merupakan *tool* pembobol autentikasi jaringan komputer berkecepatan tinggi. *Tool* ini dibuat untuk membantu perusahaan-perusahaan mengamankan jaringan komputer dengan secara proaktif menguji semua *host* dan perangkat jaringan apakah ada yang memiliki *password* lemah. Para ahli keamanan juga bergantung pada Ncrack ketika mengaudit *client* mereka. Ncrack didesain untuk menggunakan pendekatan modular, sintaks *command-line* yang mirip dengan Nmap, dan mesin yang dinamis sehingga bisa menyesuaikan perilakunya dengan respon dari jaringan. Ncrack menyediakan audit *multi-host* yang cepat tapi tetap dapat diandalkan (*reliable*).
+
+Fitur-fitur pada Ncrack di antaranya interface yang sangat fleksibel sehingga memberikan kontrol penuh pada pengguna atas operasi-operasi jaringan, serangan bruteforce yang canggih, *timing template* untuk memudahkan penggunaan, *runtime interaction* yang mirip dengan Nmap, dan masih banyak lagi. Protokol-protokol yang didukung mencakup RDP, SSH, HTTP(S), SMB, POP3(S), VNC, FTP, SIP, Redis, PostgreSQL, MySQL, dan Telnet.
+
+(Sumber: https://nmap.org/ncrack/)
+
+### 2.5. Fail2ban
+
+Fail2ban memindai file log (seperti /var/log/apache/error_log) dan melarang akses untuk alamat-alamat IP yang menunjukkan tanda-tanda kejahatan -- terlalu sering gagal memasukkan password, mencari-cari kelemahan sistem, dll. Biasanya fail2ban digunakan untuk memperbarui aturan-aturan pada *firewall* agar mencegah akses dari alamat-alamat IP tertentu dalam jangka waktu tertentu.
+
+Fail2ban sanggup mengurangi tingkat percobaan autentikasi yang gagal, walaupun tetap tidak bisa mengeliminasi risiko autentikasi lemah yang masih ada.
+
+(Sumber: https://www.fail2ban.org/wiki/index.php/Main_Page)
+
+## 3. Instalasi Ubuntu Server
+
+> - Buka aplikasi VirtualBox.
+> - Buat Virtual Machine (VM) baru dengan klik **New**, lalu masukkan konfigurasi yang sesuai dengan Ubuntu Server. Sesuaikan setting memory dengan kemampuan host. Ukuran hardisk cukup sebesar 10-20 GB. Pilih format .vdi saja untuk VM.
+> - Setelah VM dibuat, buka **Settings** untuk VM tersebut.
+> - Pilih menu **Network**, lalu sediakan/aktifkan (*enable*) 2 buah adapter. Adapter pertama adalah untuk menghubungkan VM dengan host, sedangkan adapter 2 untuk menghubungkan antar VM (dalam hal ini adalah penetrator).
+> - Untuk **Adapter 1** pilih **Attached to: NAT**.
+> - Untuk **Adapter 2** pilih **Attached to: Host-only Adapter**.
+> - Selanjutnya pilih menu **Storage**, lalu masukkan disk dengan **Optical Drive** yang diambil dari file .iso Ubuntu Server. Setting selesai.
+> - **Start** VM dan install OS seperti biasa dengan memasukkan informasi yang diperlukan.
+> - Setelah OS Ubuntu Server terinstall, tambahkan setting untuk interface kedua (adapter 2) agar VM ini dapat terhubung ke VM penetrator. 
+> - Untuk melakukan hal di atas, ubah file /etc/network/interfaces dengan menambahkan baris berikut:
+![alt text](https://github.com/aninditalarasati/PKSJ/blob/master/ip%20ssh.PNG)
+
+## 4. Instalasi Penetrator
+
+penetrator yang kita gunakan adalah ubuntu desktop
+
+> langkah-langkah
+
+> - Buka aplikasi VirtualBox.
+> - Buat Virtual Machine (VM) baru dengan klik **New**, lalu masukkan konfigurasi yang sesuai dengan Ubuntu Server. Sesuaikan setting memory dengan kemampuan host. Ukuran hardisk cukup sebesar 10-20 GB. Pilih format .vdi saja untuk VM.
+> - Setelah VM dibuat, buka **Settings** untuk VM tersebut.
+> - Pilih menu **Network**, lalu sediakan/aktifkan (*enable*) 2 buah adapter. Adapter pertama adalah untuk menghubungkan VM dengan host, sedangkan adapter 2 untuk menghubungkan antar VM (dalam hal ini adalah penetrator).
+> - Untuk **Adapter 1** pilih **Attached to: NAT**.
+> - Untuk **Adapter 2** pilih **Attached to: Host-only Adapter**.
+> - Selanjutnya pilih menu **Storage**, lalu masukkan disk dengan **Optical Drive** yang diambil dari file .iso Ubuntu Server. Setting selesai.
+> - **Start** VM dan install OS seperti biasa dengan memasukkan informasi yang diperlukan.
+> - jangan lupa buat file wordlist berisikan dictionary dan tanpa dictionary : nano pass.sh dan nano nopass.sh
+
+## 5. Uji Penetrasi 1
+
+### 5.1. Ncrack
+
+#### 5.1.1. Konfigurasi
+
+> langkah-langkah instalasi ncrack
+> - wget https://nmap.org/ncrack/dist/ncrack-0.5.tar.gz
+> - tar -xvzf ncrack.tar.gz
+> - cd ncrack
+> - ./configure
+> - make
+> - make install

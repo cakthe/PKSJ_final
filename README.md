@@ -4,62 +4,19 @@
 
 ### 1.1. Pendahuluan
 
-### 1.2. Lesson 4
+### 1.2. [Lesson 4](https://github.com/cakthe/PKSJ_final/blob/master/DVWA_L4/DVWA_L4.md)
 
-#### 1.2.1. Konfigurasi
+### 1.3. [Lesson 5](https://github.com/cakthe/PKSJ_final/blob/master/DVWA_L5/DVWA_L5.md)
 
-#### 1.2.2. Skenario
+### 1.4. [Lesson 6](https://github.com/cakthe/PKSJ_final/blob/master/DVWA_L6/DVWA_L6.MD)
 
-#### 1.2.3. Hasil
+### 1.5. [Lesson 7](https://github.com/cakthe/PKSJ_final/blob/master/DVWA_L7/DVWA_L7.md)
 
-### 1.3. Lesson 5
+### 1.6. [Lesson 8](https://github.com/cakthe/PKSJ_final/blob/master/DVWA_L8/DVWA_L8.md)
 
-#### 1.3.1. Konfigurasi
-
-#### 1.3.2. Skenario
-
-#### 1.3.3. Hasil
-
-### 1.4. Lesson 6
-
-#### 1.4.1. Konfigurasi
-
-#### 1.4.2. Skenario
-
-#### 1.4.3. Hasil
-
-### 1.5. Lesson 7
-
-#### 1.5.1. Konfigurasi
-
-#### 1.5.2. Skenario
-
-#### 1.5.3. Hasil
-
-### 1.6. Lesson 8
-
-#### 1.6.1. Konfigurasi
-
-#### 1.6.2. Skenario
-
-#### 1.6.3. Hasil
-
-### 1.7. Lesson 9
-
-#### 1.7.1. Konfigurasi
-
-#### 1.7.2. Skenario
-
-#### 1.7.3. Hasil
+### 1.7. [Lesson 9](https://github.com/cakthe/PKSJ_final/blob/master/DVWA_L9/DVWA_L9.MD)
 
 ### 1.8. Lesson 10
-
-#### 1.8.1. Konfigurasi
-
-#### 1.8.2. Skenario
-
-#### 1.8.3. Hasil
-
 
 ## 2. Cuckoo
 
@@ -82,17 +39,7 @@ Cuckoo merupakan sebuah sistem _open source_ otomatis untuk analisis _malware_. 
 
 ### 2.5. Hasil
 
-## 3. Snort
-
-### 3.1. Pendahuluan
-
-### 3.2. Instalasi
-
-### 3.3. Konfigurasi
-
-### 3.4. Skenario
-
-### 3.5. Hasil
+## 3. [Snort](https://github.com/cakthe/PKSJ_final/blob/master/snort/snort.md)
 
 ## 4. Referensi
 

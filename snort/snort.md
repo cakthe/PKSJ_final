@@ -80,4 +80,32 @@ Ubah konfigurasi IP, sesuaikan dengan alamat server yang akan diamankan.
 Edit direktori dengan sesuai, gunakan absolute path untuk memastikan bahwa direktori telah sesuai.
 ![alt text](./snort2.png)
 
-## 
+## Skenario Simple Testing dan Penggunaan
+
+#### Simple Testing
+Untuk percobaan, buatlah rule dengan nama file `local.rules`.
+
+```
+sudo vim /etc/snort/rules/local.rules
+```
+
+Isi dengan rule berikut:
+![alt text](./snort4.png)
+
+Pada file `/etc/snort/snort.conf`, uncomment pada baris local.rules seperti dibawah
+
+![alt text](./snort3.png)
+
+Setelah itu jalankan pada server
+```
+sudo snort -A console -i enp5s0 -u snort -g snort -c /etc/snort/snort.conf
+```
+
+Kemudian ping dari host lain ke server yang telah dipasang snort tersebut.
+
+
+Maka pada server akan keluar warning 'ICMP test' seperti dibawah
+
+![alt text](./snort5.png)
+
+#### Penggunaan

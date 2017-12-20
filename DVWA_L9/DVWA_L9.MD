@@ -1,9 +1,9 @@
 # DVWA | Lesson 5
 ## Konfigurasi
 
-###Using Tamper Data with crack_web_form.pl
+###{ Upload PHP Backdoor Payload }
 
-pada lesson 5, kami menggunakan metasploid dan backtrack.
+pada lesson 8, kami menggunakan metasploid dan backtrack.
 
 - pertama-tama agar backtrack dan metasploit mendapat IP, buka vm -> klik kanan -> setting -> network -> pilih bridge adapter
 
@@ -36,6 +36,25 @@ Alamat penyerang (backtrack)
 ![alt text](./13.png)
 ![alt text](./14.png)
 ![alt text](./15.png)
+![alt text](./16.png)
+![alt text](./17.png)
+![alt text](./18.png)
+![alt text](./19.png)
+![alt text](./20.png)
+![alt text](./21.png)
+![alt text](./22.png)
+![alt text](./23.png)
+![alt text](./24.png)
+![alt text](./25.png)
+![alt text](./26.png)
+![alt text](./27.png)
+![alt text](./28.png)
+![alt text](./29.png)
+![alt text](./30.png)
+![alt text](./31.png)
+![alt text](./32.png)
+
+
 
 
 ## Hasil

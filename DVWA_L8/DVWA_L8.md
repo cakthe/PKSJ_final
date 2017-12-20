@@ -7,7 +7,7 @@ pada lesson 8, kami menggunakan metasploid dan backtrack.
 
 - pertama-tama agar backtrack dan metasploit mendapat IP, buka vm -> klik kanan -> setting -> network -> pilih bridge adapter
 
-![alt text](./backtrack.PNG)
+![alt text](./backtrack.png)
 ![alt text](./metasploit.png)
 
 Alamat target DVWA (metasploitable) 

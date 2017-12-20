@@ -109,3 +109,34 @@ Maka pada server akan keluar warning 'ICMP test' seperti dibawah
 ![alt text](./snort5.png)
 
 #### Penggunaan
+
+
+Sebelumnya, tambahkan rule community pada `snort.conf`
+
+```
+sudo vim /etc/snort/snort.conf
+```
+
+![alt text](./snort6.png)
+
+Unduh salah satu paket dari http://panda.gtisc.gatech.edu/malrec/, yang terdapat pada SECREPO. 
+
+http://panda.gtisc.gatech.edu/malrec/pcap/6493e96f-4a1f-42f5-b767-cec863d1f774.pcap
+
+Setelah itu, analisa paketnya menggunakan perintah
+
+```
+sudo snort -c /etc/snort/snort.conf -l . -r 6493e96f-4a1f-42f5-b767-cec863d1f774.pcap 
+```
+
+- Hasilnya, terlihat pada hasilnya, bahwa terdapat 744 rules yang dibaca oleh snort. Terdiri dari 743 rules dari community.rules dan 1 rule dari local.rules.
+
+![alt text](./snort7.png)
+
+- Pada pcap tersebut terdapat 1006 paket, menggunakan berbagai protokol.
+
+![alt text](./snort8.png)
+
+- Berdasarkan scanning oleh snort, tidak terdapat paket yang berbahaya berdasarkan rules yang tersedia.
+
+![alt text](./snort9.png)

@@ -4,6 +4,8 @@
 
 ### 1.1. Pendahuluan
 
+DVWA adalah singkatan dari Damn Vulnerable Web Application, DVWA sendiri merupakan sebuah website yang sudah dirancang sedemikian rupa sehingga memiliki banyak celah keamanan untuk di explore. beberapa di antara nya adalah : SQL Injection, Brute Force, CSRF, XSS dan lain nya.
+
 ### 1.2. [Lesson 4](https://github.com/cakthe/PKSJ_final/blob/master/DVWA_L4/DVWA_L4.md)
 
 ### 1.3. [Lesson 5](https://github.com/cakthe/PKSJ_final/blob/master/DVWA_L5/DVWA_L5.md)
@@ -52,3 +54,7 @@ https://askubuntu.com/questions/784613/failed-to-build-pillow
 https://askubuntu.com/questions/52773/how-do-i-set-up-shared-folders-in-a-windows-xp-virtualbox-guest
 
 http://www.tomshardware.com/forum/29162-42-activate-server
+
+https://belajarphp.net/belajar-web-security-dengan-tools-dvwa/
+
+https://www.upcloud.com/support/installing-snort-on-centos/

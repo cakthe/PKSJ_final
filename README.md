@@ -20,7 +20,7 @@ DVWA adalah singkatan dari Damn Vulnerable Web Application, DVWA sendiri merupak
 
 ### 1.8. Lesson 10
 
-## 2. Cuckoo
+## 2. [Snort](https://github.com/cakthe/PKSJ_final/blob/master/cuckoo/cuckoo.md)
 
 ### 2.1. Pendahuluan
 
@@ -32,14 +32,6 @@ Cuckoo merupakan sebuah sistem _open source_ otomatis untuk analisis _malware_. 
 * Jejak _network traffic_ dalam format PCAP.
 * _Screenshot_ yang diambil selama eksekusi _malware_.
 * Keseluruhan _memory dump_ dari mesin.
-
-### 2.2. Instalasi
-
-### 2.3. Konfigurasi
-
-### 2.4. Skenario
-
-### 2.5. Hasil
 
 ## 3. [Snort](https://github.com/cakthe/PKSJ_final/blob/master/snort/snort.md)
 

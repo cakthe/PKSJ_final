@@ -35,10 +35,7 @@ Alamat penyerang (backtrack)
 ![alt text](./12.PNG)
 ![alt text](./13.PNG)
 ![alt text](./14.PNG)
-![alt text](./15.PNG)
-![alt text](./16.PNG)
-![alt text](./17.PNG)
-![alt text](./18.PNG)
+
 
 
 
@@ -46,4 +43,6 @@ Alamat penyerang (backtrack)
 
 ## Hasil
 kita bisa mengcrack password 
-![alt text](./sukses.PNG)
+![alt text](./15.PNG)
+![alt text](./16.PNG)
+![alt text](./17.PNG)

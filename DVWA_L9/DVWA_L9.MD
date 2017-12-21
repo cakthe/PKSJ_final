@@ -52,11 +52,11 @@ Alamat penyerang (backtrack)
 ![alt text](./29.PNG)
 ![alt text](./30.PNG)
 ![alt text](./31.PNG)
-![alt text](./32.PNG)
+
 
 
 
 
 ## Hasil
 kita bisa mengcrack password 
-![alt text](./sukses.PNG)
+![alt text](./32.PNG)

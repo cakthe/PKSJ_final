@@ -70,5 +70,7 @@ Alamat penyerang (backtrack)
 ## Hasil
 password berhasil diubah dengan menggunakan tee curl.txt
 ![alt text](./15.PNG)
+- coba login lagi dengan password yang sudah diganti
 ![alt text](./16.PNG)
+- berhasil!!
 ![alt text](./17.PNG)

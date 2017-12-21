@@ -114,10 +114,10 @@ machinery = virtualbox
 ...
 
 [resultserver]
-
 ip = 192.168.56.1	# IP address host
-
 port = 2042			# Dibiarkan saja kecuali ada servis lain yang berjalan pada port tsb
+
+...
 ```
 
 **auxiliary.conf**
@@ -148,14 +148,20 @@ interface = vboxnet0
 machines = windowsxp	#Nama VM guest
 
 [windowsxp]
-
 label = windowsxp
-
 platform = windows
-
 ip = 192.168.56.10		#Alamat IP VM guest
-
 snapshot = snapshot1	#Nama snapshot (diatur di bagian 2.3.5)
+
+...
+```
+
+**reporting.conf**
+```
+...
+
+[mongodb]
+enabled = yes
 
 ...
 ```
@@ -201,7 +207,7 @@ $ cp [path_to_python2.7_installer] /home/[user]/VirtualBox\ VMs/winxpshare/
 $ cp [path_to_PIL_installer] /home/[user]/VirtualBox\ VMs/winxpshare/
 ```
 
-Sebelum VM bisa menggunakan _shared folder_, VM harus terlebih dahulu diinstall **VirtualBoxGuestAdditions**. Jadi iso VBoxGuestAdditions harus diunduh terlebih dahulu lalu di_attach_ ke _optical disk_ VM, kemudian nyalakan VM dan lakukan instalasi.
+Sebelum VM bisa menggunakan _shared folder_, VM harus terlebih dahulu diinstall **VirtualBoxGuestAdditions**. Jadi iso VBoxGuestAdditions harus diunduh terlebih dahulu lalu di\_attach_ ke _optical disk_ VM, kemudian nyalakan VM dan lakukan instalasi.
 
 ![alt text](./vm_guestadditions.png) 
 
@@ -222,4 +228,46 @@ $ vboxmanage snapshot "windowsxp" restorecurrent
 
 ### 2.4. Skenario
 
+Buka satu terminal untuk menjalankan cuckoo melalui `virtualenv`:
+```
+$ cd ~
+$ . venv/bin/activate
+(venv)$ cuckoo
+```
+
+![alt text](./cuckoo_start.png)
+
+Buka terminal lain untuk menjalankan web untuk cuckoo:
+```
+$ cd ~
+$ . venv/bin/activate
+(venv)$ cuckoo web
+```
+
+Lalu buka _browser_ dan akses `http://localhost:8000`
+
+![alt text](./cuckoo_web.png)
+
+Unduh malware, nyalakan VM, lalu _submit_ file malware ke aplikasi web cuckoo.
+
 ### 2.5. Hasil
+
+Sayangnya setelah dicoba berkali-kali masih terjadi error yang belum jelas sebabnya.
+
+![alt text](./cuckoo_score.png) 
+
+Saat file malware dianalisis, VM tiba-tiba berhenti. Ketika dibuka hasil analisisnya di web, tidak ditemukan pesan error yang spesifik.
+
+![alt text](./cuckoo_result.png)
+
+Sedangkan di terminal, yang muncul adalah pesan
+```
+ERROR: Error starting Virtual Machine! VM: windowsxp, error: Trying to start an already started VM: windowsxp
+CRITICAL: Unable to passthrough root command (drop_disable) as the rooter unix socket doesn't exist.
+
+ERROR: Cannot run volatility module: the volatility library is not available. Please install it according to their documentation.
+```
+
+![alt text](./cuckoo_error2.png)
+
+Padahal modul volatility sudah terinstal di awal.

